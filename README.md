@@ -21,7 +21,7 @@ for packet lister -> ``` python3 packet_listener.py --help or python3 packet_lis
 ## USE 
 ``` python3 mitm.py -t *target_ip* -g *gateway_ip* ``` 
 
-``` python3 packet_listener.py *user_interface* ```
+``` python3 packet_listener.py -i *user_interface* ```
 
 
 ### Requirements
