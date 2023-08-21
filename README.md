@@ -25,6 +25,6 @@ for packet lister -> ``` python3 packet_listener.py --help or python3 packet_lis
 
 
 ### Requirements
-pyton 3.8
+python 3.8
 
 scapy 2.4.5
